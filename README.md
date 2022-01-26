@@ -13,4 +13,4 @@ The script will automatically look for the following common bad characters after
 
 It is also worth noting that short shellcode (less than 255 bytes) will likely contain a null byte in the encoded shellcode in part of the decoding routine. This null byte comes from line 80, and if short shellcode must be used that does not contain null bytes, edit the script to do something along the lines of:
 ```mov cl, shellcode_length```
-where the shellcode_length would be one byte long. This shortens the decoding routine by two bytes, so either add in a couple of null bytes or edit the offset on line 57 to account for it.
+where the shellcode_length would be one byte long. This shortens the decoding routine by two bytes, so either add in a couple of NOP instructions or edit the offset on line 57 to account for it.
